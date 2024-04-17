@@ -9,7 +9,7 @@
   "type":"module",
   "scripts": {
     "dev":"node --watch src/service.js",
-    "test": "node --test --watch --inspect test/",
+    "test": "node --test --watch test/",
     "test:coverage":"node --test --experimental-test-coverage test/",
     "test:debug":"node --inspect --watch --test test/"
 
