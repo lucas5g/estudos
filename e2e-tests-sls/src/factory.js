@@ -13,7 +13,7 @@ if (isLocal) {
 
 const s3Client = new S3Client(s3Config)
 
-const s3 = {
+export const S3 = {
   listBuckets: args => {
     return s3Client.send(new ListBucketsCommand(args))
   },
