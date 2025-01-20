@@ -1,0 +1,24 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - DB_NAME=mydb
+      - DB_USER=johndoe
+      - DB_PASSWORD=randompassword
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./pg_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=myemail@example.com
+      - PGADMIN_DEFAULT_PASSWORD=mypassword
